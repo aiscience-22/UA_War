@@ -1,3 +1,6 @@
+# Preventing big files from downloading
+/input
+
 # Logs
 logs
 *.log
