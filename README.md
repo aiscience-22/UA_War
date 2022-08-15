@@ -1,3 +1,4 @@
+
 # War in Ukraine: Sentiment Prediction  
 Using Artificial Intellect to discover Twitter trends and Sentiment Analysis
  
@@ -72,3 +73,4 @@ The submission includes speaker notes, flashcards, or a video of the presentatio
 # Recommendation for future analysis
 
 Anything the team would have done differently
+
