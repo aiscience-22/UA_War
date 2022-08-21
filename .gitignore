@@ -114,3 +114,5 @@ dist
 
 #jupypter notebook
 .ipynb_checkpoints
+
+.DS_Store
