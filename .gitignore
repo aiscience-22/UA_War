@@ -116,3 +116,6 @@ dist
 .ipynb_checkpoints
 
 .DS_Store
+
+#r history 
+.Rhistory
