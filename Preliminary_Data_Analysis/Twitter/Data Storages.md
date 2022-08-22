@@ -7,7 +7,7 @@
 Contains final data with sentiments analysis for 4 hours, for 12 day of August.
 Part of users, following columns: 'tweetcreatedts', 'text', negative', 'neutral', 'positive'
 
-[img10.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img10.png)
+![img10.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img10.png)
 
 ## aug_twitter_data.csv
 
