@@ -24,13 +24,13 @@ Second, we can be sure that there is no fake Kremlin users in this dataset: now 
 
 [Kremlin's Network](https://www.bbc.com/news/technology-60790821)
 
-![img7.png](Preliminary_Data_Analysis/Resources/Images/img7.png)
+![img7.png](UA_War/Preliminary_Data_Analysis/Resources/Images/img7.png)
 
 Additionally, we can compare our study for reduced dataset with Alexander Shevtsov study for the whole dataset. If significant difference in trends  appears, that means we catched the Kremlin bots working!  
 
 [Alexander Shevtsov study](https://alexdrk14.github.io/RussiaUkraineWar/sentiment.html)  
 
-![img8.png](Preliminary_Data_Analysis/Resources/Images/img8.png)
+![img8.png](UA_War/Preliminary_Data_Analysis/Resources/Images/img8.png)
 
 Ok. Now, how we reduce the user’s quantity?
 
