@@ -20,15 +20,17 @@ But!
 We know for sure one thing about users: data of their registration. We can take tweets from the registered before certain data users only. 
 
 First, it allow as meet out technical requirements.
-Second, we can be sure that there is no fake Kremlin users in this dataset: now there is Kremlin's network of Twitter accounts that work together to retweet and drive up traffic:
+Second, we can be sure that there is no fake Kremlin users in this dataset: now there is Kremlin's network of Twitter accounts that work together to retweet and drive up traffic:  
+
 [Kremlin's Network](https://www.bbc.com/news/technology-60790821)
 
-![img7.png](Resources/Images/img7.png)
+![img7.png](Preliminary_Data_Analysis/Resources/Images/img7.png)
 
-Additionally, we can compare our study for reduced dataset with Alexander Shevtsov study for the whole dataset. If significant difference in trends  appears, that means we catched the Kremlin bots working!
-[Alexander Shevtsov study](https://alexdrk14.github.io/RussiaUkraineWar/sentiment.html)
+Additionally, we can compare our study for reduced dataset with Alexander Shevtsov study for the whole dataset. If significant difference in trends  appears, that means we catched the Kremlin bots working!  
 
-![img8.png](Resources/Images/img8.png)
+[Alexander Shevtsov study](https://alexdrk14.github.io/RussiaUkraineWar/sentiment.html)  
+
+![img8.png](Preliminary_Data_Analysis/Resources/Images/img8.png)
 
 Ok. Now, how we reduce the user’s quantity?
 
