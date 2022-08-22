@@ -56,6 +56,12 @@ Column location has 800249 null values, it means that we have data in more then 
 
 ![img3.png](/images/img3.png) 
 
+## Event data preprocessing
+We also explored the Ukraine hostilities data which is stored in a JSON file. We got the data from this website https://data.humdata.org/visualization/ukraine-humanitarian-operations/
+The data we needed was already in a JSON format, and we practiced creating it into a dataframe and then to a csv file. There were multiple arrays, so we took one of them and practiced with it. Unfortunately, this data will not be necessary for our analysis and we did not go further with it. Also, there were multiple unnecessary columns and non-English words that made this dataset less than ideal. 
+<img width="994" alt="Screen Shot 2022-08-22 at 10 04 48 AM" src="https://user-images.githubusercontent.com/95447175/185978348-94ee5506-4bb7-4f68-b1a8-72827fafadef.png">
+
+## pgAdmin PostreSQL Database
 
 ## Description of feature engineering and the feature selection, including the team's decision-making process  
 
