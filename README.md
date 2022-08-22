@@ -62,6 +62,7 @@ The data we needed was already in a JSON format, and we practiced creating it in
 <img width="994" alt="Screen Shot 2022-08-22 at 10 04 48 AM" src="https://user-images.githubusercontent.com/95447175/185978348-94ee5506-4bb7-4f68-b1a8-72827fafadef.png">
 
 ## pgAdmin PostreSQL Database
+We decided on creating a database in pgAdmin.
 
 ## Description of feature engineering and the feature selection, including the team's decision-making process  
 
