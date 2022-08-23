@@ -105,6 +105,8 @@ ClusterCentroids algorithm
 SMOTEENN algorithm  
 BalancedRandomForestClassifier (bias reduction model)  
 EasyEnsembleClassifier (bias reduction model)  
+pgAdmin 4
+PostreSQL
 
 # Result of analysis
 
