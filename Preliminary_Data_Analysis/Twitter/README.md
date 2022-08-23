@@ -1,4 +1,26 @@
-# Overview of the Twitter Urkraine Analysis
+# War in Ukraine: Sentiment Prediction
+
+**Using Artificial Intellect to discover Twitter trends and Sentiment Analysis**
+
+We select to discover, how War in Ukraine is presented on Twitter, and to realize Sentiment Prediction for current twits. This subject was selected due to topicality of that information and acute social need for such an analysis.
+
+On February 24th, 2022, Russia invaded Ukraine after months of military preparation around the borders. The war is going to have huge impacts around the world, perhaps even ending the globalized era as we know it. It is imperative that we capture and analyze the massive amounts of data being put out as a result of this war and extract insights for future generations.
+
+## Hypothesis
+
+We intend to show that Ukrainian War news have impact on the trend of tweets negative sentiment. Our supervised machine learning model might predict, based on tweet data and information about news, whether a tweets negative sentiment will rise or not.
+
+For first segment we will use datetime and lenght of tweets for prediction, but later we could decide to make clasterisation for Twitter users for more accurate trend prediction.
+
+# Description of the communication protocols
+
+![img1.png](/   Resources/images/img1.png) 
+
+# Overview of the News Data analysis
+
+
+
+# Overview of the Twitter Data  Analysis
 
 The source of data is [Ukraine Conflict Twitter Dataset ](https://www.kaggle.com/datasets/bwandowando/ukraine-russian-crisis-twitter-dataset-1-2-m-rows?select=0801_UkraineCombinedTweetsDeduped.csv.gzip) with 49.74M tweets on Kaggle. 
 
