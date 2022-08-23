@@ -1,0 +1,21 @@
+-- Creating tables in pgAdmin for two data files 
+
+CREATE TABLE aug_twitter_sentiments
+(tweetcreatedts varchar,
+cleaned_text varchar,
+negative numeric,
+neutral numeric,
+positive numeric
+);
+
+SELECT * FROM aug_twitter_sentiments;
+
+CREATE TABLE Events_UA
+(date varchar,
+ event varchar,
+ weight varchar
+);
+
+SELECT * FROM Events_UA; 
+
+-- DROP TABLE Events_UA; 
