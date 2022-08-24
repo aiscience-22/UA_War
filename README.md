@@ -22,10 +22,10 @@ For first segment we will use datetime and lenght of tweets for prediction, but 
 3. All support data files and images live in a sub directory under the main Resources directory.
 
 ### The team roles for first segment:  
-**Olga Podolska** - mockup datasets, twitter data, sentiment analysis, machine leanning  
-**Veronica Lobkina** - data base, news data  
-**Jaymee Liu** - GitHub, news data   
-**Jesse Hernandez** - technical support, storage data, machine learning
+**Olga Podolska** - mockup datasets, twitter data, RoBERTa sentiment analysis, machine leanning  
+**Veronica Lobkina** - data base 
+**Jaymee Liu** - GitHub 
+**Jesse Hernandez** - data base, machine learning
 
 
 ### Overview of the News Data Analysis
