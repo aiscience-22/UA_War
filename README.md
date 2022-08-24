@@ -6,13 +6,13 @@ We select to discover, how War in Ukraine is presented on Twitter, and to realiz
 
 On February 24th, 2022, Russia invaded Ukraine after months of military preparation around the borders. The war is going to have huge impacts around the world, perhaps even ending the globalized era as we know it. It is imperative that we capture and analyze the massive amounts of data being put out as a result of this war and extract insights for future generations.
 
-## Hypothesis
+### Hypothesis
 
 We intend to show that Ukrainian War news have impact on the trend of tweets negative sentiment. Our supervised machine learning model might predict, based on tweet data and information about news, whether a tweets negative sentiment will rise or not.
 
 For first segment we will use datetime and lenght of tweets for prediction, but later we could decide to make clasterisation for Twitter users for more accurate trend prediction.
 
-## Description of the communication protocols
+### Description of the communication protocols
 
 ![repo_org.png](/Notes%20/repo_org.png) 
 
@@ -28,7 +28,7 @@ For first segment we will use datetime and lenght of tweets for prediction, but 
 **Jesse Hernandez** - technical support, storage data, machine learning
 
 
-## Overview of the News Data Analysis
+### Overview of the News Data Analysis
 
 For first segment we created mockup dataset with main news just to use it as a placeholder for future web scraping or API downloading. 
 
@@ -123,7 +123,7 @@ We decided to choose 2008 year of registration as a limit. The duration of the w
 
 Additionally, 2008 is a year when Russian invasion to Georgia started, and probably Kremlin network starts to develop.
 
-# Description of feature engineering and the feature selection, including the team's decision-making process  
+## Description of feature engineering and the feature selection
 
 Our team considered different options: Supervised and Unsupervised learning, Clastering, different Neural Networks for sentiment analysis. 
 
@@ -150,6 +150,6 @@ SMOTE algorithms
 ClusterCentroids algorithm  
 SMOTEENN algorithm  
 BalancedRandomForestClassifier (bias reduction model)  
-EasyEnsembleClassifier (bias reduction model) 
-transformers
-RoBERTa 
+EasyEnsembleClassifier (bias reduction model)   
+transformers  
+RoBERTa (pretrained deep neuron network model)  
