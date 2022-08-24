@@ -123,6 +123,16 @@ We decided to choose 2008 year of registration as a limit. The duration of the w
 
 Additionally, 2008 is a year when Russian invasion to Georgia started, and probably Kremlin network starts to develop.
 
+## Joining the data
+
+For our research we needed to join the twitter table with the news table. We used PostgreSQL for that:
+
+![img13.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img13.png)
+
+The result is the table with the date, tweets, sentiment of tweets and weight of events:
+
+![img14.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img14.png)
+
 ## Description of feature engineering and the feature selection
 
 Our team considered different options: Supervised and Unsupervised learning, Clastering, different Neural Networks for sentiment analysis. 
@@ -131,9 +141,9 @@ For sentiment analysis we eventually chose RoBERTa, because it is a free pretrai
 
 For discovering trends and prediction we chose to use Supervised Machone Learning, considering that as result of prediction we will have negative sentiment, which is a number. We used Balanced Random Forest Classifier and Easy Ensemble AdaBoost Classifier to compare the results. 
 
-As we intended to show that Ukrainian War news have impact on the trend of tweets negative sentiment, we need to predict the number of this sentiment for the days in our prediction dataset. Our supervised machine learning model might predict, based on tweet data and information about news, whether a tweets negative sentiment will rise or not.
+As we intended to show that Ukrainian War news have impact on the trend of tweets negative sentiment, we need to predict the number of this sentiment for the days in our prediction dataset. Our supervised machine learning model might predict, based on tweet data and information about news, whether a tweets negative sentiment will rise or not. So far we have managed the machine learning model to return us to labels:
 
-For first segment we will use datetime and lenght of tweets for prediction, but later we could decide to make clasterisation for Twitter users for more accurate trend prediction.
+For first segment we used datetime and lenght of tweets for prediction, but later we could decide to make clasterisation for Twitter users for more accurate trend prediction.
 
   
 
@@ -142,6 +152,8 @@ For first segment we will use datetime and lenght of tweets for prediction, but 
 **Used tools:**
 numpy                     1.21.5  
 pandas                    1.16.0  
+PostgreSQL  
+pgAdmin                   4  
 scipy                     1.7.3  
 scikit-learn              2.2.0  
 imbalanced-learn          0.9.0  
