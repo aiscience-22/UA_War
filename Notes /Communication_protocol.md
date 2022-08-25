@@ -1,11 +1,5 @@
 # Communication protocol for Second Segment: Build the Pieces
 
-### Contacts:
-**Olga Podolska**	olgapodolska@gmail.com  	(925)285-1802   
-**Jaymee Liu**		 jaymeeliu@gmail.com            (415)218-1631  
-**Jesse Hernandes**	jesse.hernandez.j@gmail.com    	(650)759-6680  
-**Veronika Lobkina**	veronica.lobkina@ajust.com   (925)683-6920  
-
 For most updates we use Slack, if something urgent is needed – texts by phone.  
 **Zoom time:**
 1.	Classes
@@ -13,7 +7,7 @@ For most updates we use Slack, if something urgent is needed – texts by phone.
 3.	Scheduled calls for group and for pairs
 Weekly time for project ~ 20+ hours a week.
 4 tasks for each person (2 main + 2 additional)
-## Deliverables First Segment:
+## Deliverables First Segment (the rest of them):
 1. New joined table from DataBase to AWS - **Vero** (+Jesse), deadline today
 2. Mockup machine learning model - **Jesse** (+Olga), deadline Friday 08.26 at 11 pm
 3. Readme - **Olga**, deadline Sunday 08.28 at 11 pm
@@ -22,7 +16,7 @@ Weekly time for project ~ 20+ hours a week.
 We’re using data from February 24 till August 12 only!
 ### Second Segment Paragraphs content:
 
-1.	twitter_data_cleaned.csv, TwitterUA_EDA.ipynb, TwitterUA_cleaned_data.ipynb   
+1.	twitter_data_cleaned.csv, TwitterUA_EDA.ipynb, TwitterUA_cleaned_data.ipynb   - **Jaymee (+Olga)**  
 - **Cleaned dataset for whole Twitter data** for users registered till 2008-01-01(usercreatedts)  
 To do:  
 1.1	Download the data from Kaggle  
@@ -35,7 +29,7 @@ To do:
 1.8	For now we need columns - date(tweetcreatedts), length_text, hashtags, favorite_count, followers, following (this list could changes due to result of machine learning)  
 
 
-2.	twitter_sentiments.csv, TwitterUA_sentiment_analysis.ipynb  
+2.	twitter_sentiments.csv, TwitterUA_sentiment_analysis.ipynb  - **Jesse (+Olga)**  
  - **RoBERTa sentiment analysis** for whole dataset  
 To do:  
 2.1	Server installation  
@@ -44,7 +38,7 @@ To do:
 2.4	Joining the tables with sentiment  
 2.5	Download the data to AWS Data   
 
-3.	EventUA.csv, EventUA_cleaned_data.ipynb  
+3.	EventUA.csv, EventUA_cleaned_data.ipynb  - **Jaymee  (+Vero)**  
 - **Cleaned dataset for Event data** from 2022-02-24 till 2022-08-12  
 To do:  
 3.1	Find source of data  
@@ -54,7 +48,7 @@ To do:
 3.5	Creating table: date, weight  
 3.6	Download the data to AWS storage  
 
-4.	Twitter ETL.ipynb, pgAdmin  
+4.	Twitter ETL.ipynb, pgAdmin  - **Vero (+Jaymee)**  
 - **DataBase: joined table** exporting to Google Colab without AWS  
 To do:  
 4.1	Download the data from AWS to Google Colab  
@@ -63,7 +57,7 @@ To do:
 4.4	Save result to AWS  
 4.5	Find way to export the joined table to Google Colab without AWS  
 
-5.	Twitter_ensemble.ipynb  
+5.	Twitter_ensemble.ipynb  - **Olga (+Jesse)**
 - **Machine Learning Model**   
 To do:  
 5.1	Try different models to achieve most accurate prediction:  
@@ -73,10 +67,10 @@ To do:
 5.5	Clustering users data  
 5.6	Try different outcome for analysis – certain tweets or certain data  
 
-### Paragraphs distribution:  
+### Paragraphs distribution for second segment:  
 1 – Jaymee  (+Olga) deadline Friday 08.26 at 11 pm  
 2 – Jesse   (+Olga) deadline Saturday 08.27 at 11 pm  
 3 – Jaymee  (+Vero) deadline Sunday 08.28 at 11 pm  
 4 – Vero    (+Jaymee) deadline Monday 08.29 at 6 pm  
 5 – Olga    (+Jesse) deadline Wednesday 08.31 at 6 pm  
-Readmy - Olga, deadline Sunday 09.04 at 11 pm  
+Presentation - Olga, deadline Sunday 09.04 at 11 pm  
