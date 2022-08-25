@@ -1,12 +1,12 @@
 # Communication protocol for Second Segment: Build the Pieces
 
 ### Contacts:
-**Olga Podolska**	olgapodolska@gmail.com  		(925)285-1802   
+**Olga Podolska**	olgapodolska@gmail.com  	(925)285-1802   
 **Jaymee Liu**		 jaymeeliu@gmail.com            (415)218-1631  
 **Jesse Hernandes**	jesse.hernandez.j@gmail.com    	(650)759-6680  
 **Veronika Lobkina**	veronica.lobkina@ajust.com   (925)683-6920  
 
-For most updates we use Slack, if something urgent is needed – texts by phone.
+For most updates we use Slack, if something urgent is needed – texts by phone.  
 **Zoom time:**
 1.	Classes
 2.	Office hours
@@ -14,15 +14,17 @@ For most updates we use Slack, if something urgent is needed – texts by phone.
 Weekly time for project ~ 20+ hours a week.
 4 tasks for each person (2 main + 2 additional)
 ## Deliverables First Segment:
-1. New joined table from DataBase to AWS - **Vero** (+Jesse) deadline today
-2. Mockup machine learning model **Jesse** (+Olga) deadline Friday 08.26 at 11 pm
-3. Readme file **Olga** deadline Sunday 08.28 at 11 pm
+1. New joined table from DataBase to AWS - **Vero** (+Jesse), deadline today
+2. Mockup machine learning model - **Jesse** (+Olga), deadline Friday 08.26 at 11 pm
+3. Readme - **Olga**, deadline Sunday 08.28 at 11 pm
 
+## Deliverables Second Segment:
+We’re using data from February 24 till August 12 only!
 ### Second Segment Paragraphs content:
 
-1.	twitter_data_cleaned.csv, TwitterUA_EDA.ipynb, TwitterUA_cleaned_data.ipynb –   
-**Cleaned dataset for whole Twitter data** for users registered till 2008-01-01(usercreatedts)  
-	To do:  
+1.	twitter_data_cleaned.csv, TwitterUA_EDA.ipynb, TwitterUA_cleaned_data.ipynb   
+- **Cleaned dataset for whole Twitter data** for users registered till 2008-01-01(usercreatedts)  
+To do:  
 1.1	Download the data from Kaggle  
 1.2	Reduce data from February 24 till August 12  
 1.3	Repeat Exploratory analysis  
@@ -62,7 +64,7 @@ To do:
 4.5	Find way to export the joined table to Google Colab without AWS  
 
 5.	Twitter_ensemble.ipynb  
-- **Machine Learning Model** 
+- **Machine Learning Model**   
 To do:  
 5.1	Try different models to achieve most accurate prediction:  
 5.2	Linear Regression  
@@ -71,12 +73,10 @@ To do:
 5.5	Clustering users data  
 5.6	Try different outcome for analysis – certain tweets or certain data  
 
-## Deliverables Second Segment:
-We’re using data from February 24 till August 12 only!
-### Paragraphs distribution:
-1 – Jaymee  (+Olga) deadline Friday 08.26 at 11 pm
-2 – Jesse   (+Olga) deadline Saturday 08.27 at 11 pm
-3 – Jaymee  (+Vero) deadline Sunday 08.28 at 11 pm
-4 – Vero    (+Jaymee) deadline Monday 08.29 at 6 pm
-5 – Olga    (+Jesse) deadline Wednesday 08.31 at 6 pm
-Readmy - Olga, deadline Sunday 09.04 at 11 pm
+### Paragraphs distribution:  
+1 – Jaymee  (+Olga) deadline Friday 08.26 at 11 pm  
+2 – Jesse   (+Olga) deadline Saturday 08.27 at 11 pm  
+3 – Jaymee  (+Vero) deadline Sunday 08.28 at 11 pm  
+4 – Vero    (+Jaymee) deadline Monday 08.29 at 6 pm  
+5 – Olga    (+Jesse) deadline Wednesday 08.31 at 6 pm  
+Readmy - Olga, deadline Sunday 09.04 at 11 pm  
