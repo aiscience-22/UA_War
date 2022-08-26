@@ -10,22 +10,30 @@ On February 24th, 2022, Russia invaded Ukraine after months of military preparat
 
 We intend to show that Ukrainian War news have impact on the trend of tweets negative sentiment. Our supervised machine learning model might predict, based on tweet data and information about news, whether a tweets negative sentiment will rise or not.
 
-For first segment we will use datetime and lenght of tweets for prediction, but later we could decide to make clasterisation for Twitter users for more accurate trend prediction.
+We assume that we can predict emotional importance of the events of war by the sentiment analysis of tweets. For first segment we use for that simple linear regression, but at the next segment we could try to make clasterisation for Twitter users for more accurate trend prediction.
 
 ### Description of the communication protocols
 
+We created detailed [communication protocol](https://github.com/aiscience-22/UA_War/blob/main/Notes%20/Communication_protocol.md), which describes our ways of communications and team roles for first two segments of project.
+
 ![repo_org.png](/Notes%20/repo_org.png) 
 
-
+We created [Team Git Best Practices and Repo Organization](https://github.com/aiscience-22/UA_War/blob/main/Notes%20/TeamGITBestPractices.md):
 1. All premliminary data research and transformation live in the Preliminary Data Analysis - Directory
 2. Main project files that consist of combining the various data set together and machine learning of data will live on the top level of the directory
 3. All support data files and images live in a sub directory under the main Resources directory.
 
-### The team roles for first segment:  
-**Olga Podolska** - mockup datasets, twitter data, RoBERTa sentiment analysis, machine leanning   
-**Veronica Lobkina** - data base  
-**Jaymee Liu** - GitHub  
-**Jesse Hernandez** - data base, machine learning  
+### The team roles for the first segment:  
+**Olga Podolska** - mockup datasets, twitter data exploration and cleaning, RoBERTa sentiment analysis, machine learning model creating 
+**Veronica Lobkina** - data base creating 
+**Jaymee Liu** - GitHub creating 
+**Jesse Hernandez** - data base interacting, GitHub conflicts resolving, machine learning model creating
+
+### The planned team roles for the second segment:  
+**Olga Podolska** - RoBERTa sentiment analysis, machine learning improving 
+**Veronica Lobkina** - data base integration
+**Jaymee Liu** - GitHub, twitter data exploration and cleaning, collecting data for events of war  
+**Jesse Hernandez** - server installation, machine learning  improving
 
 
 ### Overview of the News Data Analysis
@@ -93,7 +101,7 @@ However, we have received enough data to our mockup twitter dataset:
 
 ![img12.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img12.png) 
 
-## Redusing data
+## Reducing data
 
 After some research we discovered: there are two popular free Twitter datasets only. Both of them are about 12-13 Gigabytes. All smaller datasets are broken in different ways, I believe I tried all of them in the whole Internet. We can just assume that it is normal amount of data for this Ukrainian war related tweets, and there is no point for us do our own API downloading, it will be the same big.
 
@@ -139,29 +147,43 @@ Our team considered different options: Supervised and Unsupervised learning, Cla
 
 For sentiment analysis we eventually chose RoBERTa, because it is a free pretrained model from Meta (Facebook), and it is robustly optimized method for pretraining natural language processing (NLP) systems that improves on Bidirectional Encoder Representations from Transformers, or BERT, the self-supervised method released by Google in 2018. 
 
-For discovering trends and prediction we chose to use Supervised Machone Learning, considering that as result of prediction we will have negative sentiment, which is a number. We used Balanced Random Forest Classifier and Easy Ensemble AdaBoost Classifier to compare the results. 
+For discovering trends and prediction we chose to use Supervised Machine Learning Linear Regression Model, considering that as result of prediction we will have negative sentiment, which is a number. 
 
-As we intended to show that Ukrainian War news have impact on the trend of tweets negative sentiment, we need to predict the number of this sentiment for the days in our prediction dataset. Our supervised machine learning model might predict, based on tweet data and information about news, whether a tweets negative sentiment will rise or not. So far we have managed the machine learning model to return us to labels:
+As we intended to show that Ukrainian War news have impact on the trend of tweets negative sentiment, we need to predict the number of this sentiment for the days in our prediction dataset. Our supervised machine learning model might predict, based on tweet data and information about news, whether a tweets negative sentiment will rise or not. So far we have managed the machine learning model to return us to labels just for two days of war:
 
-For first segment we used datetime and lenght of tweets for prediction, but later we could decide to make clasterisation for Twitter users for more accurate trend prediction.
+![img15.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img15.png)
+
+We assume that further we can predict emotional importance of the events of war by the sentiment analysis of tweets. For first segment we use for that simple linear regression, but at the next segment we could try to make clasterisation for Twitter users for more accurate trend prediction.
+
+Our mockup dataset has data for two days only from 180 days of war yet. This is due to the duration of the calculation of sentiment analysis data: even for that two days it took 6 hours to get the result due to size of twitter data.
 
   
 
-## Technologies, languages, tools, and algorithms used throughout the project:
+## Technologies, languages, tools, and algorithms used throughout the project:  
 
-**Used tools:**
-numpy                     1.21.5  
-pandas                    1.16.0  
-PostgreSQL  
-pgAdmin                   4  
+**Used tools:**  
+beautifulsoup4            4.11.1  
+charset-normalizer        2.0.4  
+ipykernel                 6.9.1  
+importlib-metadata        4.11.3   
+huggingface_hub           0.2.1   
+jupyter                   1.0.0   
+matplotlib-inline         0.1.2   
+numpy                     1.23.1    
+pandas                    1.4.3    
+prompt_toolkit            3.0.20    
+python                    3.10.4   
+pytorch                   1.10.2  
+sqlite                    3.39.2   
+tokenizers                0.11.4  
+transformers              4.18.0  
+tqdm                      4.64.0   
+urllib3                   1.26.11   
 scipy                     1.7.3  
 scikit-learn              2.2.0  
 imbalanced-learn          0.9.0  
-RandomOverSampler  
-SMOTE algorithms  
 ClusterCentroids algorithm  
-SMOTEENN algorithm  
-BalancedRandomForestClassifier (bias reduction model)  
-EasyEnsembleClassifier (bias reduction model)   
-transformers  
+SMOTEENN algorithm   
 RoBERTa (pretrained deep neuron network model)  
+pgAdmin                   4.6.8    
+postgresql              10.2.16 
