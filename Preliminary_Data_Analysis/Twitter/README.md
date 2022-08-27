@@ -1,4 +1,4 @@
-# War in Ukraine: Sentiment Prediction
+## War in Ukraine: Sentiment Prediction
 
 **Using Artificial Intellect to discover Twitter trends and Sentiment Analysis**
 
