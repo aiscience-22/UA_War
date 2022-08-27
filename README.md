@@ -10,7 +10,7 @@ On February 24th, 2022, Russia invaded Ukraine after months of military preparat
 
 We intend to show that Ukrainian War news have impact on the trend of tweets negative sentiment. Our supervised machine learning model might predict, based on tweet data and information about news, whether a tweets negative sentiment will rise or not.
 
-We assume that we can predict emotional importance of the events of war by the sentiment analysis of tweets. For first segment we use for that simple linear regression, but at the next segment we could try to make clasterisation for Twitter users for more accurate trend prediction.
+For first segment we use for that simple linear regression, but at the next segment we could try to make clasterisation for Twitter users for more accurate trend prediction.
 
 ### Description of the communication protocols
 
@@ -24,16 +24,16 @@ We created [Team Git Best Practices and Repo Organization](https://github.com/ai
 3. All support data files and images live in a sub directory under the main Resources directory.
 
 ### The team roles for the first segment:  
-**Olga Podolska** - mockup datasets, twitter data exploration and cleaning, RoBERTa sentiment analysis, machine learning model creating 
-**Veronica Lobkina** - data base creating 
-**Jaymee Liu** - GitHub creating 
-**Jesse Hernandez** - data base interacting, GitHub conflicts resolving, machine learning model creating
+**Olga Podolska** - mockup datasets, twitter data exploration and cleaning, RoBERTa sentiment analysis, machine learning model creating  
+**Veronica Lobkina** - data base creating  
+**Jaymee Liu** - GitHub creating  
+**Jesse Hernandez** - data base interacting, GitHub conflicts resolving, machine learning model creating  
 
 ### The planned team roles for the second segment:  
-**Olga Podolska** - RoBERTa sentiment analysis, machine learning improving 
-**Veronica Lobkina** - data base integration
+**Olga Podolska** - RoBERTa sentiment analysis, machine learning improving  
+**Veronica Lobkina** - data base integration  
 **Jaymee Liu** - GitHub, twitter data exploration and cleaning, collecting data for events of war  
-**Jesse Hernandez** - server installation, machine learning  improving
+**Jesse Hernandez** - server installation, machine learning  improving  
 
 
 ### Overview of the News Data Analysis
