@@ -34,7 +34,7 @@ All users, following columns: 'tweetcreatedts', 'text'
 
 ## Reduced by 2008 year data
 
-[https://uaresources.s3.amazonaws.com//time_twitter_data.csv](https://uaresources.s3.amazonaws.com/time_twitter_data.csv)
+[https://uaresources.s3.us-west-1.amazonaws.com/time_twitter_data.csv](https://uaresources.s3.us-west-1.amazonaws.com/time_twitter_data.csv) 173 MB
 
 Contains reduced by users registration data for 12 day of August.
 In progress.
