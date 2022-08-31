@@ -24,7 +24,7 @@
 
 Our structure of GitHub for the Second Segment:
 
-![img16.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img16.png) 
+![img16.jpg](/Preliminary_Data_Analysis/Twitter/Resources/Images/img16.jpg) 
 
 ## Deliverables Third Segment:
 
