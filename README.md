@@ -19,7 +19,7 @@ We created detailed [communication protocol](https://github.com/aiscience-22/UA_
 ![repo_org.png](/Notes/repo_org.png) 
 
 We created [Team Git Best Practices and Repo Organization](https://github.com/aiscience-22/UA_War/blob/main/Notes20/TeamGITBestPractices.md):
-1. All premliminary data research and transformation live in the Preliminary Data Analysis - Directory
+1. All preliminary data research and transformation live in the Preliminary Data Analysis - Directory
 2. Main project files that consist of combining the various data set together and machine learning of data will live on the top level of the directory
 3. All support data files and images live in a sub directory under the main Resources directory.
 
@@ -47,24 +47,24 @@ The source of data is [Ukraine Conflict Twitter Dataset ](https://www.kaggle.com
 ![img1.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img1.png) 
 
 We decided to limit ourselves to dates from February 24th (starting war date) to August 12th.
-We hoped to answer the following question:
+We hoped to answer the following questions:
 * When were the earliest and latest tweets in this dataset created?  
 * Visualize tweet frequency by date  
 * How many languages are in this dataset?  
-* What percentage of the tweets is in English (en)?
+* What percentage of the tweets are in English (en)?
 * How many symbols do the shortest and longest tweet contain? 
 * What are the locations of Twitter users in this Dataset?
 * What are the scores for negative, neutral, and positive sentiments?
-* Which model should we use first use for prediction? 
+* Which model should we use for prediction? 
 * How can we improve prediction?
 
 # Data exploration phase of the project
 
 ## Twitter data preprocessing
 
-In total, we have 161 files with the tweets about Russian-Ukrainian War, totaling 12 Gb, but it is too much data for the first segment of our project, where we want to just play with the data and draft out the project. Due to that, we chose to preprocess the August data only and see what we can say about them. 
+In total, we have 161 files with the tweets about Russian-Ukrainian War, totaling 12 Gb, but it is too much data for the first segment of our project, where we want to just play with the data and draft out the project. Due to that, we chose to preprocess the August data only and see what we can glean from it. 
 
-The raw dataset for 12 days of August has 1849926 rows and 28 columns. The earliest tweet was at 2022-08-01 00:00:00, and the latest was at 2022-08-12 23:59:58, which means that data is correct, it is all August tweets. 
+The raw dataset for 12 days of August has 1849926 rows and 28 columns. The earliest tweet was at 2022-08-01 00:00:00, and the latest was at 2022-08-12 23:59:58, which means that data is correct, the tweets are all from August. 
 
 We can see, that the amount of tweets and their frequency is significantly different day by day. Most likely, this difference correlates with the state of the war, news about it, but this hypothesis needs to be tested. 
 
@@ -82,7 +82,7 @@ The shortest tweet has 1 character. The longest tweet has 1027 characers, despit
 
 The dataset has 1849926 rows, but column coordinates have 1847412 null values, therefore we have 2514 data points here, which is basically nothing. We can safely remove this column as well.
 
-Column location has 800249 null values, it means that we have data in more than a million rows. There are 127675 unique locations in this DataFrame. As we can see, the location input wasn't formalized and even when users filled it, they filled it with some creative description of location as "Facing West" or "The Peanut Gallery", which doesn't give precise geographic information. Therefore, despite that the ability to analyze the correlation between tweet sentiment and users geographic location would be a great idea, unfortunately we cannot do this. The location data wasn't standardized and can only give us information about users' endless creativity.
+Column location has 800249 null values, it means that we have data in more than a million rows. There are 127675 unique locations in this DataFrame. As we can see, the location input wasn't formalized and even when users filled it, they filled it with some creative description of location as "Facing West" or "The Peanut Gallery", which doesn't give precise geographic information. Therefore, despite that the ability to analyze the correlation between tweet sentiment and users' geographic location would be a great idea, unfortunately we cannot do this. The location data wasn't standardized and can only give us information about users' endless creativity.
 
 ![img2.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img2.png) 
 
@@ -90,7 +90,7 @@ Column location has 800249 null values, it means that we have data in more than 
 
 ## RoBERTa Sentiment Analysis
 
-For setiment analysis, we tried to use August tweets dataset containing 1050085 rows and 2 columns (datetime and text only). For each tweet, the pretrained RoBERTa model planned to generate a score for each negative, neutral, and positive sentiment.
+For sentiment analysis, we tried to use the August tweets dataset containing 1050085 rows and 2 columns (datetime and text only). For each tweet, the pretrained RoBERTa model planned to generate a score for each negative, neutral, and positive sentiment.
 
 Unfortunately, the predicted time to complete this task turned out to be 59 hours, and we were forced to stop RoBERTa after 6 hours of work.
 
@@ -102,15 +102,15 @@ However, we have received enough data to our mockup twitter dataset:
 
 ## Reducing data
 
-After some research we discovered: there are two popular free Twitter datasets only. Both of them are about 12-13 Gigabytes. All smaller datasets are broken in different ways, Olga tried all of them. We assumed that it is a normal amount of data for this Ukrainian war related tweets, and there is no point for us do our own API downloading, it will be the same big.
+After some research we discovered: there are two popular free Twitter datasets only. Both of them are about 12-13 Gigabytes. All smaller datasets are broken in different ways, Olga tried all of them. We assumed that it is a normal amount of data for this Ukrainian war related tweets, and there is no point for us do our own API downloading, it will be the same size.
 
-How can we reduce data?
+How can we reduce the data size?
 
-For example, we can use tweets with only one hashtag. Unfortunately, it definitely will skew our data, hashtags' popularity changes all the time. We're not even sure a certain hashtag existed at Feb 24! (Most probably it wasn't.)
+For example, we can use tweets with only one hashtag. Unfortunately, it definitely will skew our data, hashtags' popularity changes all the time. We're not even sure a certain hashtag existed at Feb 24th! (Most probably it wasn't.)
 
 The same problem is with many other ways of reducing. We don’t know users' gender, age, or geographical position to make a selection according to these parameters. Any selection according to the content of the tweet - quote, retweet, hashtags – skews the data.
 
-But we know for sure one thing about users: the date of their registration. We can take tweets from users who registered before a certain date. 
+But we know one thing for sure about users: the date of their registration. We can take tweets from users who registered before a certain date. 
 
 First, it allows us to meet out technical requirements.
 Secondly, we can be sure that there are no fake Kremlin users in this dataset: here is the Kremlin's network of Twitter accounts that work together to retweet and drive up traffic:  
@@ -143,17 +143,17 @@ The result is the table with the date, tweets, sentiment of tweets and weight of
 
 Our team considered different options: Supervised and Unsupervised learning, Clastering, different Neural Networks for sentiment analysis. 
 
-For sentiment analysis we eventually chose RoBERTa, because it is a free pretrained model from Meta (Facebook), and it is robustly optimized method for pretraining natural language processing (NLP) systems that improves on Bidirectional Encoder Representations from Transformers, or BERT, the self-supervised method released by Google in 2018. 
+For sentiment analysis we eventually chose RoBERTa, because it is a free pretrained model from Meta (Facebook), and it is a robustly optimized method for pretraining natural language processing (NLP) systems that improves on Bidirectional Encoder Representations from Transformers, or BERT, the self-supervised method released by Google in 2018. 
 
-For discovering trends and prediction we chose to use Supervised Machine Learning Linear Regression Model, considering that as result of prediction we will have negative sentiment, which is a number. 
+For discovering trends and predictions, we chose to use a Supervised Machine Learning Linear Regression Model, considering that as result of prediction we will have negative sentiment, which is a number. 
 
-As we intended to show that Ukrainian War news have impact on the trend of tweets negative sentiment, we need to predict the number of this sentiment for the days in our prediction dataset. Our supervised machine learning model might predict, based on tweet data and information about news, whether a tweet's negative sentiment will rise or not. So far we have accomplished for the machine learning model to return to us the labels just for two days of war:
+As we intended to show that Ukrainian War news have an impact on the trend of tweets' negative sentiment, we needed to predict the number of this sentiment for the days in our prediction dataset. Our supervised machine learning model might predict, based on tweet data and information about news, whether a tweet's negative sentiment will rise or not. So far, the machine learning model was able to provide us with labels just for two days of war:
 
 ![img15.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img15.png)
 
 We assume that we can predict the emotional importance of war events by the sentiment analysis of tweets. For the first segment, we used simple linear regression, but at the next segment we could try to use clusterization for Twitter users to obtain a more accurate trend prediction.
 
-Our mockup dataset has data for two days only from 180 days of war to date. This is due to the duration of the calculation of sentiment analysis data: even for that two days it took 6 hours to get the result due to the size of twitter data.
+Our mockup dataset has data for only two days from 180 days of war to date. This is due to the duration of the calculation of sentiment analysis data: even for those two days it took 6 hours to get the result due to the size of Twitter data.
 
  
 ## Technologies, languages, tools, and algorithms used throughout the project:  
