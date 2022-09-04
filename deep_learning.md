@@ -42,4 +42,4 @@ We used kernel density estimation (KDE) as a non-parametric way to estimate the 
 
 But further discovering shows as that there is still hope. When we determined the evaluation points for the plot of the estimated PDF, we got three variables which can have some connection:
 
-![img25.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img25.png) 
+![img26.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img26.png) 
