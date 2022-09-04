@@ -16,7 +16,7 @@ For first segment we use for that simple linear regression, but at the next segm
 
 We created detailed [communication protocol](https://github.com/aiscience-22/UA_War/blob/main/Notes%20/Communication_protocol.md), which describes our ways of communications and team roles for first two segments of project.
 
-![repo_org.png](/Notes20/repo_org.png) 
+![repo_org.png](/Notes/repo_org.png) 
 
 We created [Team Git Best Practices and Repo Organization](https://github.com/aiscience-22/UA_War/blob/main/Notes20/TeamGITBestPractices.md):
 1. All premliminary data research and transformation live in the Preliminary Data Analysis - Directory
