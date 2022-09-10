@@ -9,8 +9,6 @@ We selected as our topic to discover how the war in Ukraine is presented on Twit
 
 We created detailed [communication protocol](https://github.com/aiscience-22/UA_War/blob/main/Notes%20/Communication_protocol.md), which describes our ways of communication and team roles for the project.
 
-![image.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/image.png) 
-
 ## Outline of the project
 
 We intend to create supervised machine learning model which predict, based on tweet data and information about news, whether tweets will negative or not.
@@ -164,3 +162,5 @@ Tableau Public
 
 ## Data Visualization 
 Link to Tableau dashboard – https://public.tableau.com/views/UkraineWarTweetSentiment/Retweets?:language=en-US&:display_count=n&:origin=viz_share_link
+
+Link to our presentation - https://docs.google.com/presentation/d/1YVUWtCOBY4OCbx3E5mbcpg1QE_QSp3SSXpANawC53HE/edit?usp=sharing
