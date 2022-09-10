@@ -4,130 +4,57 @@
 
 We selected as our topic to discover how the war in Ukraine is presented on Twitter, and to run Sentiment Prediction for recent tweets. This subject was selected due to the urgency of the war and an acute social need for such an analysis.
 
-On February 24th, 2022, Russia invaded Ukraine after months of military preparation around the border. The war is impacting the world in numerous ways, perhaps even ending the globalized era as we know it. It is imperative that we capture and analyze the massive amounts of data being put out as a result of this war and extract insights for future generations.
-
-### Hypothesis
-
-We intend to show that Ukrainian War news have an impact on the trend of tweets with negative sentiment. Our supervised machine learning model might predict, based on tweet data and information about news, whether tweets with negative sentiment will increase or not.
-
-For the first segment we used simple linear regression, but at the next segment we could try to make clusterization for Twitter users for more accurate trend prediction.
 
 ### Description of the communication protocols
 
-We created detailed [communication protocol](https://github.com/aiscience-22/UA_War/blob/main/Notes%20/Communication_protocol.md), which describes our ways of communication and team roles for the first two segments of project.
+We created detailed [communication protocol](https://github.com/aiscience-22/UA_War/blob/main/Notes%20/Communication_protocol.md), which describes our ways of communication and team roles for the project.
 
-![repo_org.png](/Notes/repo_org.png) 
+## Outline of the project
 
-We created [Team Git Best Practices and Repo Organization](https://github.com/aiscience-22/UA_War/blob/main/Notes20/TeamGITBestPractices.md):
-1. All preliminary data research and transformation live in the Preliminary Data Analysis - Directory
-2. Main project files that consist of combining the various data set together and machine learning of data will live on the top level of the directory
-3. All support data files and images live in a sub directory under the main Resources directory.
+We intend to create supervised machine learning model which predict, based on tweet data and information about news, whether tweets will negative or not.
 
-### The team roles for the first segment:  
-**Olga Podolska** - mockup datasets, twitter data exploration and cleaning, RoBERTa sentiment analysis, machine learning model creating  
-**Veronica Lobkina** - data base creating   
-**Jaymee Liu** - GitHub creating  
-**Jesse Hernandez** - data base interacting, GitHub conflicts resolving, machine learning model creating  
-
-### The planned team roles for the second segment:  
-**Olga Podolska** - RoBERTa sentiment analysis, machine learning improving  
-**Veronica Lobkina** - data base integration  
-**Jaymee Liu** - GitHub, twitter data exploration and cleaning, collecting data for events of war   
-**Jesse Hernandez** - server installation, machine learning improvement 
+![image.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/image.png) 
 
 
-### Overview of the News Data Analysis
-
-For first segment we created a mockup dataset with main news just to use it as a placeholder for future web scraping or API download. 
-
-## Overview of the Twitter Data Analysis
+### Data exploration phase of the project
 
 The source of data is [Ukraine Conflict Twitter Dataset ](https://www.kaggle.com/datasets/bwandowando/ukraine-russian-crisis-twitter-dataset-1-2-m-rows?select=0801_UkraineCombinedTweetsDeduped.csv.gzip) with 49.74M tweets on Kaggle, 12 Gb. 
 
-![img1.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img1.png) 
+In total, we have 161 files with the tweets about Russian-Ukrainian War, totaling 12 Gb. We decided to choose the users that registered on Twitter before 2008. 
 
-We decided to limit ourselves to dates from February 24th (starting war date) to August 12th.
-We hoped to answer the following questions:
-* When were the earliest and latest tweets in this dataset created?  
-* Visualize tweet frequency by date  
-* How many languages are in this dataset?  
-* What percentage of the tweets are in English (en)?
-* How many symbols do the shortest and longest tweet contain? 
-* What are the locations of Twitter users in this Dataset?
-* What are the scores for negative, neutral, and positive sentiments?
-* Which model should we use for prediction? 
-* How can we improve prediction?
-
-# Data exploration phase of the project
-
-## Twitter data preprocessing
-
-In total, we have 161 files with the tweets about Russian-Ukrainian War, totaling 12 Gb, but it is too much data for the first segment of our project, where we want to just play with the data and draft out the project. Due to that, we chose to preprocess the August data only and see what we can glean from it. 
-
-The raw dataset for 12 days of August has 1849926 rows and 28 columns. The earliest tweet was at 2022-08-01 00:00:00, and the latest was at 2022-08-12 23:59:58, which means that data is correct, the tweets are all from August. 
-
-We can see, that the amount of tweets and their frequency is significantly different day by day. Most likely, this difference correlates with the state of the war, news about it, but this hypothesis needs to be tested. 
-
-![img4.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img4.png) 
-
-Regarding the language of tweets, we can see that English (en) was by far the most prevalent language in this dataset, nearing 1.2 million tweets out of 1.96 million. The second and third most prevalent languages were French and Thai, respectively.
-
-Note that the forth most prevalent language was "und", which is used to indicate that Twitter could not detect a language. We can assume, that it safely inspects English language only due to most of tweets being in English despite coming from different corners of world: USA, UK, India, Ukraine etc.
+Regarding the language of tweets, we can see that English (en) was by far the most prevalent language in this dataset, nearing 1.2 million tweets out of 1.96 million. 
 
 ![img5.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img5.png) 
 
-The shortest tweet has 1 character. The longest tweet has 1027 characers, despite the fact that a tweet can have 280 characters max. How could this character limit be surpassed? Upon research, mentions supposedly do not count toward the character limit when the tweet is a reply. The distribution of lengths is right-skewed. Most tweets appear to be below 300 characters in length. Although, because we have a few outlying tweets that have abnormally long lengths, as investigated above, the histogram has an elongated x-axis.
-
-![img6.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img6.png) 
-
-The dataset has 1849926 rows, but column coordinates have 1847412 null values, therefore we have 2514 data points here, which is basically nothing. We can safely remove this column as well.
-
-Column location has 800249 null values, it means that we have data in more than a million rows. There are 127675 unique locations in this DataFrame. As we can see, the location input wasn't formalized and even when users filled it, they filled it with some creative description of location as "Facing West" or "The Peanut Gallery", which doesn't give precise geographic information. Therefore, despite that the ability to analyze the correlation between tweet sentiment and users' geographic location would be a great idea, unfortunately we cannot do this. The location data wasn't standardized and can only give us information about users' endless creativity.
+Unfortunately, the location and coordinates in twitter data do not comtain meaningfull information. As we can see, the location input wasn't formalized and even when users filled it, they filled it with some creative description of location as "Facing West" or "The Peanut Gallery", which doesn't give precise geographic information. Therefore, despite that the ability to analyze the correlation between tweet sentiment and users' geographic location would be a great idea, unfortunately we cannot do this. The location data wasn't standardized and can only give us information about users' endless creativity.
 
 ![img2.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img2.png) 
 
 ![img3.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img3.png) 
 
+For the machine learning model we labeled tweet hashtags using LabelEncoder:
+
+![lgbm_negative1.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/lgbm_negative1.png) 
+
 ## RoBERTa Sentiment Analysis
 
-For sentiment analysis, we tried to use the August tweets dataset containing 1050085 rows and 2 columns (datetime and text only). For each tweet, the pretrained RoBERTa model planned to generate a score for each negative, neutral, and positive sentiment.
+For sentiment analysis we eventually chose RoBERTa, because it is a free pretrained model from Meta (Facebook), and it is a robustly optimized method for pretraining natural language processing (NLP) systems that improves on Bidirectional Encoder Representations from Transformers, or BERT, the self-supervised method released by Google in 2018.
 
-Unfortunately, the predicted time to complete this task turned out to be 59 hours, and we were forced to stop RoBERTa after 6 hours of work.
+Considering this model should work many hours to obtain the sentiment analysis, we installed RoBERTa on the remote server.
 
-![img11.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img11.png) 
+After sentiment analysis we got the information about sentiments by each tweet and could discover the trends in the tweets.
+As example, we compared sentiments for Russia and Ukraine in the tweets:
 
-However, we have received enough data to our mockup twitter dataset:
+![negative_ua_ru.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/negative_ua_ru.png)
 
-![img12.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img12.png) 
+![positive_ua_ru.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/positive_ua_ru.png)
 
-## Reducing data
+In addition we compared sentiments for Zelensky and Putin in the tweets:
 
-After some research we discovered: there are two popular free Twitter datasets only. Both of them are about 12-13 Gigabytes. All smaller datasets are broken in different ways, Olga tried all of them. We assumed that it is a normal amount of data for this Ukrainian war related tweets, and there is no point for us do our own API downloading, it will be the same size.
+![negative_ze_pu.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/negative_ze_pu.png)
 
-How can we reduce the data size?
+![positive_ze_pu.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/positive_ze_pu.png)
 
-For example, we can use tweets with only one hashtag. Unfortunately, it definitely will skew our data, hashtags' popularity changes all the time. We're not even sure a certain hashtag existed at Feb 24th! (Most probably it wasn't.)
-
-The same problem is with many other ways of reducing. We don’t know users' gender, age, or geographical position to make a selection according to these parameters. Any selection according to the content of the tweet - quote, retweet, hashtags – skews the data.
-
-But we know one thing for sure about users: the date of their registration. We can take tweets from users who registered before a certain date. 
-
-First, it allows us to meet out technical requirements.
-Secondly, we can be sure that there are no fake Kremlin users in this dataset: here is the Kremlin's network of Twitter accounts that work together to retweet and drive up traffic:  
-
-[Kremlin's Network](https://www.bbc.com/news/technology-60790821)
-
-![img7.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img7.png)
-
-Additionally, we can compare our study for the reduced dataset with Alexander Shevtsov's study for the whole dataset. If a significant difference in trends  appears, that means we caught the Kremlin bots working!  
-
-[Alexander Shevtsov study](https://alexdrk14.github.io/RussiaUkraineWar/sentiment.html)  
-
-![img8.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img8.png)
-
-We decided to choose the users that registered on Twitter before 2008. The duration of the war is 179 days to date. Our training dataset is 12 days, i.e. 7%. That means we should be prepared to work with a dataset that is 14 times bigger. The dataset with the tweets from users registered before 2008 has 3266 rows.
-
-Additionally, 2008 is a year when the Russian invasion to Georgia started, and most likely the Kremlin network of bots began to develop.
 
 ## Joining the data
 
@@ -139,22 +66,68 @@ The result is the table with the date, tweets, sentiment of tweets and weight of
 
 ![img14.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img14.png)
 
-## Description of feature engineering and the feature selection
+## Analysis phase of the project
 
-Our team considered different options: Supervised and Unsupervised learning, Clastering, different Neural Networks for sentiment analysis. 
+Our team considered different options: Supervised and Unsupervised learning, Clustering, different Neural Networks.  
 
-For sentiment analysis we eventually chose RoBERTa, because it is a free pretrained model from Meta (Facebook), and it is a robustly optimized method for pretraining natural language processing (NLP) systems that improves on Bidirectional Encoder Representations from Transformers, or BERT, the self-supervised method released by Google in 2018. 
+First we chose to use a Supervised Machine Learning Linear Regression Model, considering that as result of prediction we should have negative sentiment, which is a number. But it doesnt't predict neither sentiment of each tweet nor even the average sentiment of the day.
 
-For discovering trends and predictions, we chose to use a Supervised Machine Learning Linear Regression Model, considering that as result of prediction we will have negative sentiment, which is a number. 
+Linear Regression Model prediction for sentiment of each tweet:
 
-As we intended to show that Ukrainian War news have an impact on the trend of tweets' negative sentiment, we needed to predict the number of this sentiment for the days in our prediction dataset. Our supervised machine learning model might predict, based on tweet data and information about news, whether a tweet's negative sentiment will rise or not. So far, the machine learning model was able to provide us with labels just for two days of war:
+![LR_all.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/LR_all.png)
 
-![img15.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img15.png)
+Linear Regression Model prediction for the average sentiment of the day:
 
-We assume that we can predict the emotional importance of war events by the sentiment analysis of tweets. For the first segment, we used simple linear regression, but at the next segment we could try to use clusterization for Twitter users to obtain a more accurate trend prediction.
+![LR_average.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/LR_average.png)
 
-Our mockup dataset has data for only two days from 180 days of war to date. This is due to the duration of the calculation of sentiment analysis data: even for those two days it took 6 hours to get the result due to the size of Twitter data.
+Then we chose to try the Deep Learning Model.
 
+Considering we still hoped to get the output as a number of negative score of tweet emotions, as Activation function for the hidden layers we choosed ReLU, and as Activation function for the output layer we choosed Linear. For compiling model we used loss='mean_squared_error'.
+
+Unfortunately, that still did not bring meaningful results. The model worked, but the accuracy of prediction = 0.
+
+![deep_learning.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/deep_learning.png) 
+
+Then we decided to discover, what does the distribution of our values look like in general. 
+
+We used kernel density estimation (KDE) as a non-parametric way to estimate the Probability Density Function (PDF) of a random variable. Unfortunately, the probability density for all our variables is close to 0, which means they are mostly random:
+
+![img25.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img25.png) 
+
+But further discovering showed us that there is still hope. When we determined the correlation between our data, we could see, that some of them is correlated. 
+
+We clustered our data for 3 classes: negative tweets, positive and neutral. As we can see on the plot, this classes is still pretty messed! That is understandable: the human emotion is very hard predicted.
+
+![lgbm_negative2.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/lgbm_negative2.png) 
+
+Unfortunately, taking the numerical representation of the correlation, we see that the correlation is fairly low, with some of them being negative. Significant correlation is between negativity and positivity only, but it is meaningless for us: clearly, if we know if the tweet was labeled as positive or neitral, we 100% can predict that the current tweet is not negative with 100% accuracy without any machine learning.
+
+![correlation.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/correlation.png) 
+
+To catch this low correlation we used LGBM Classifier model - gradient boosting framework LightGBM. LightGBM grows tree vertically while other tree based learning algorithms grow trees horizontally. It means that LightGBM grows tree leaf-wise while other algorithms grow level-wise. It will choose the leaf with max delta loss to grow. When growing the same leaf, leaf-wise algorithm can reduce more loss than a level-wise algorithm.
+
+We divaded our dataset on training and testing in proportion 70/30:
+
+![lgbm_negative3.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/lgbm_negative3.png) 
+
+And finally we got the result! Our model got 0.6527 training-set accuracy score.
+Confusion matrix looks pretty good, considering very low correlation between our data:
+
+ [[107622  16376]
+ [ 58187  30922]]
+
+* True Positives(TP) =  107622
+* True Negatives(TN) =  30922
+* False Positives(FP) =  16376
+* False Negatives(FN) =  58187
+
+![lgbm_negative4.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/lgbm_negative4.png) 
+
+Average precision is 0.65:
+
+![lgbm_negative5.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/lgbm_negative5.png) 
+
+To improve our prediction we would analyse not hashtags only, but the tweet text itself, highlighting certain keywords with a negative connotation specificly in this dataset, and teaching the machine to recognize them. This is a hard work, but certainly it could improve our results further. 
  
 ## Technologies, languages, tools, and algorithms used throughout the project:  
 
@@ -180,8 +153,8 @@ urllib3                   1.26.11
 scipy                     1.7.3  
 scikit-learn              2.2.0  
 imbalanced-learn          0.9.0  
-ClusterCentroids algorithm  
-SMOTEENN algorithm   
+LabelEncoder algorithm  
+LGBM Classifier model  
 RoBERTa (pretrained deep neuron network model)  
 pgAdmin                   4.6.8    
 postgresql              10.2.16 
@@ -189,3 +162,5 @@ Tableau Public
 
 ## Data Visualization 
 Link to Tableau dashboard – https://public.tableau.com/views/UkraineWarTweetSentiment/Retweets?:language=en-US&:display_count=n&:origin=viz_share_link
+
+Link to our presentation - https://docs.google.com/presentation/d/1YVUWtCOBY4OCbx3E5mbcpg1QE_QSp3SSXpANawC53HE/edit?usp=sharing
