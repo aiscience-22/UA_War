@@ -4,11 +4,6 @@
 
 We selected as our topic to discover how the war in Ukraine is presented on Twitter, and to run Sentiment Prediction for recent tweets. This subject was selected due to the urgency of the war and an acute social need for such an analysis.
 
-
-### Description of the communication protocols
-
-We created detailed [communication protocol](https://github.com/aiscience-22/UA_War/blob/main/Notes%20/Communication_protocol.md), which describes our ways of communication and team roles for the project.
-
 ## Outline of the project
 
 We intend to create supervised machine learning model which predict, based on tweet data and information about news, whether tweets will negative or not.
@@ -113,8 +108,8 @@ We divaded our dataset on training and testing in proportion 70/30:
 And finally we got the result! Our model got 0.6527 training-set accuracy score.
 Confusion matrix looks pretty good, considering very low correlation between our data:
 
- [[107622  16376]
- [ 58187  30922]]
+ [[107622  16376]  
+ [ 58187  30922]]  
 
 * True Positives(TP) =  107622
 * True Negatives(TN) =  30922
@@ -154,7 +149,7 @@ scipy                     1.7.3
 scikit-learn              2.2.0  
 imbalanced-learn          0.9.0  
 LabelEncoder algorithm  
-LGBM Classifier model  
+LightGBM Classifier model  
 RoBERTa (pretrained deep neuron network model)  
 pgAdmin                   4.6.8    
 postgresql              10.2.16 
@@ -163,4 +158,4 @@ Tableau Public
 ## Data Visualization 
 Link to Tableau dashboard – https://public.tableau.com/views/UkraineWarTweetSentiment/Retweets?:language=en-US&:display_count=n&:origin=viz_share_link
 
-Link to our presentation - https://docs.google.com/presentation/d/1YVUWtCOBY4OCbx3E5mbcpg1QE_QSp3SSXpANawC53HE/edit?usp=sharing
+Link to our presentation - https://docs.google.com/presentation/d/15m7WHhccFcoW0xLscXw7r_kX-yVmb541g1s-voC973c/edit?usp=sharing
