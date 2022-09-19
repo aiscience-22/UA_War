@@ -21,7 +21,7 @@ Regarding the language of tweets, we can see that English (en) was by far the mo
 
 ![img5.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img5.png) 
 
-Unfortunately, the location and coordinates in twitter data do not comtain meaningfull information. As we can see, the location input wasn't formalized and even when users filled it, they filled it with some creative description of location as "Facing West" or "The Peanut Gallery", which doesn't give precise geographic information. Therefore, despite that the ability to analyze the correlation between tweet sentiment and users' geographic location would be a great idea, unfortunately we cannot do this. The location data wasn't standardized and can only give us information about users' endless creativity.
+Unfortunately, the location and coordinates in twitter data do not contain meaningful information. As we can see, the location input wasn't formalized and even when users filled it, they filled it with some creative description of location as "Facing West" or "The Peanut Gallery", which doesn't give precise geographic information. Therefore, despite that the ability to analyze the correlation between tweet sentiment and users' geographic location would be a great idea, unfortunately we cannot do this. The location data wasn't standardized and can only give us information about users' endless creativity.
 
 ![img2.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/img2.png) 
 
@@ -77,7 +77,7 @@ Linear Regression Model prediction for the average sentiment of the day:
 
 Then we chose to try the Deep Learning Model.
 
-Considering we still hoped to get the output as a number of negative score of tweet emotions, as Activation function for the hidden layers we choosed ReLU, and as Activation function for the output layer we choosed Linear. For compiling model we used loss='mean_squared_error'.
+Considering we still hoped to get the output as a number of negative score of tweet emotions, as Activation function for the hidden layers we chose ReLU, and as Activation function for the output layer we chose Linear. For compiling model we used loss='mean_squared_error'.
 
 Unfortunately, that still did not bring meaningful results. The model worked, but the accuracy of prediction = 0.
 
@@ -95,7 +95,7 @@ We clustered our data for 3 classes: negative tweets, positive and neutral. As w
 
 ![lgbm_negative2.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/lgbm_negative2.png) 
 
-Unfortunately, taking the numerical representation of the correlation, we see that the correlation is fairly low, with some of them being negative. Significant correlation is between negativity and positivity only, but it is meaningless for us: clearly, if we know if the tweet was labeled as positive or neitral, we 100% can predict that the current tweet is not negative with 100% accuracy without any machine learning.
+Unfortunately, taking the numerical representation of the correlation, we see that the correlation is fairly low, with some of them being negative. Significant correlation is between negativity and positivity only, but it is meaningless for us: clearly, if we know if the tweet was labeled as positive or neutral, we 100% can predict that the current tweet is not negative with 100% accuracy without any machine learning.
 
 ![correlation.png](/Preliminary_Data_Analysis/Twitter/Resources/Images/correlation.png) 
 
